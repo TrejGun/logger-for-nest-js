@@ -3,13 +3,18 @@ version: "3"
 services:
 
   postgres:
-    image: postgres
+    container_name: postgres
+    image: postgres:alpine
+    user: root
     ports:
       - "5432:5432"
     environment:
-      POSTGRES_PASSWORD: password
+      POSTGRES_USER: "${POSTGRES_USER}"
+      POSTGRES_PASSWORD: "${POSTGRES_PASSWORD}"
+      POSTGRES_DB: "${POSTGRES_DB}"
     volumes:
-      - ./data/postgres:/var/lib/postgresql/data
+      - ${POSTGRES_DIR_PATH}:/var/lib/postgresql/data
+
 
   server:
     image: nestjs-logger-example
@@ -17,13 +22,13 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "3000:3000"
+      - "${PORT}:${PORT}"
     command: npm start
     environment:
       NODE_ENV: development
-      HOST: "0.0.0.0"
-      PORT: 3000
-      POSTGRES_URL: postgres://postgres:password@postgres/postgres
+      HOST: "${HOST}"
+      PORT: "${PORT}"
+      POSTGRES_URL: "postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres/${POSTGRES_DB}"
       PAPERTRAIL_HOST: "${PAPERTRAIL_HOST}"
       PAPERTRAIL_PORT: "${PAPERTRAIL_PORT}"
     depends_on:
