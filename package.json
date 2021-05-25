@@ -29,7 +29,7 @@
     "@nestjs/testing": "7.6.17",
     "@trejgun/eslint-config": "0.1.7",
     "@types/chalk": "2.2.0",
-    "@types/express": "4.17.11",
+    "@types/express": "4.17.12",
     "@types/express-session": "1.17.3",
     "@types/jest": "26.0.23",
     "@types/node": "14.17.1",
