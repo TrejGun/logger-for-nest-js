@@ -1,7 +1,8 @@
 {
   "author": {
     "email": "TrejGun+OpenSource@gmail.com",
-    "name": "TrejGun"
+    "name": "TrejGun",
+    "url": "https://gemunion.io/"
   },
   "dependencies": {
     "@nestjs/common": "8.2.6",
