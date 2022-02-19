@@ -25,7 +25,7 @@
     "winston": "3.5.1",
     "winston-papertrail-transport": "1.0.9"
   },
-  "description": "session based authorization for nest.js",
+  "description": "logger for nest.js",
   "devDependencies": {
     "@nestjs/testing": "8.2.6",
     "@gemunion/eslint-config": "1.0.1",
@@ -56,10 +56,10 @@
   },
   "license": "MIT",
   "main": "./dist/index.js",
-  "name": "session-based-authorization-for-nestjs",
+  "name": "logger-for-nest-js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/TrejGun/session-based-authorization-for-nestjs"
+    "url": "https://github.com/TrejGun/logger-for-nest-js"
   },
   "scripts": {
     "build": "tsc",
@@ -76,6 +76,6 @@
     "test": "NODE_ENV=test jest --config jest.config.json --detectOpenHandles",
     "typeorm": "NODE_ENV=development ts-node ./node_modules/.bin/typeorm --config src/ormconfig.ts"
   },
-  "title": "Session based authorization for Nest.js",
+  "title": "Logger for Nest.js",
   "version": "0.0.1"
 }
