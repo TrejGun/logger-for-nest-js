@@ -1,9 +1,9 @@
-import {Repository} from "typeorm";
+import { Repository } from "typeorm";
 
-import {Injectable, Inject, Logger, LoggerService} from "@nestjs/common";
-import {InjectRepository} from "@nestjs/typeorm";
+import { Injectable, Inject, Logger, LoggerService } from "@nestjs/common";
+import { InjectRepository } from "@nestjs/typeorm";
 
-import {UserEntity} from "./user.entity";
+import { UserEntity } from "./user.entity";
 
 @Injectable()
 export class UserService {
@@ -14,7 +14,7 @@ export class UserService {
   ) {}
 
   public findAndCount(): Promise<[UserEntity[], number]> {
-    this.loggerService.log("Search users", "UserService");
+    this.loggerService.log("Search users", UserService.name);
     return this.userEntityRepository.findAndCount();
   }
 }

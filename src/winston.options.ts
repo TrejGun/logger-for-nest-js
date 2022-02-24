@@ -1,22 +1,19 @@
-import {Injectable} from "@nestjs/common";
-import {WinstonModuleOptions, WinstonModuleOptionsFactory} from "nest-winston";
-import {PapertrailTransport} from "winston-papertrail-transport";
-import {format, transports} from "winston";
+import { Injectable } from "@nestjs/common";
+import { WinstonModuleOptions, WinstonModuleOptionsFactory } from "nest-winston";
+import { PapertrailTransport } from "winston-papertrail-transport";
+import { format, transports } from "winston";
 import chalk from "chalk";
-
 
 export const winstonModuleOptions = {
   format: format.combine(
     format.timestamp(),
     format.printf(args => {
-      const {level, context, timestamp, message, stack, trace} = args;
+      const { level, context, timestamp, message, stack } = args;
       let color = chalk.green;
       let text = "";
       if (level === "error") {
         color = chalk.red;
-        const lines = (stack || trace).split("\n");
-        lines[0] = color(lines[0]);
-        text = lines.join("\n");
+        text = [color(message), stack].join("\n");
       } else if (level === "info") {
         color = chalk.green;
         text = color(message);
@@ -33,7 +30,10 @@ export const winstonModuleOptions = {
 
       return [
         color(`[Nest] ${process.pid}   -`),
-        new Date(timestamp).toLocaleString(),
+        new Date(timestamp)
+          .toISOString()
+          .replace("T", " ")
+          .replace(/\.\d{3}Z/, ""),
         context ? chalk.yellow(`[${context as string}]`) : "",
         text,
       ].join(" ");

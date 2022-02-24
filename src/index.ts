@@ -1,12 +1,11 @@
 import "./env";
-import {NestFactory} from "@nestjs/core";
-import {DocumentBuilder, SwaggerModule} from "@nestjs/swagger";
-import {NestExpressApplication} from "@nestjs/platform-express";
-import {WinstonModule} from "nest-winston";
+import { NestFactory } from "@nestjs/core";
+import { DocumentBuilder, SwaggerModule } from "@nestjs/swagger";
+import { NestExpressApplication } from "@nestjs/platform-express";
+import { WinstonModule } from "nest-winston";
 
-import {AppModule} from "./app.module";
-import {winstonModuleOptions} from "./winston.options";
-
+import { AppModule } from "./app.module";
+import { winstonModuleOptions } from "./winston.options";
 
 async function bootstrap(): Promise<void> {
   const app = await NestFactory.create<NestExpressApplication>(AppModule, {

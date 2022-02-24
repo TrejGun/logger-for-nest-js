@@ -1,7 +1,7 @@
-import {Injectable} from "@nestjs/common";
-import {TypeOrmModuleOptions, TypeOrmOptionsFactory} from "@nestjs/typeorm";
+import { Injectable } from "@nestjs/common";
+import { TypeOrmModuleOptions, TypeOrmOptionsFactory } from "@nestjs/typeorm";
 
-import {TypeOrmLoggerService} from "./typeorm-logger.service";
+import { TypeOrmLoggerService } from "./typeorm-logger.service";
 import ormconfig from "../ormconfig";
 
 @Injectable()
