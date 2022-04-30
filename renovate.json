@@ -1,4 +1,3 @@
 {
-  "extends": ["github>trejgun/renovate-config"],
-  "requiredStatusChecks": null
+  "extends": ["github>trejgun/renovate-config"]
 }
