@@ -21,7 +21,7 @@
     "rxjs": "7.5.5",
     "swagger-ui-express": "4.3.0",
     "typeorm": "0.3.6",
-    "typeorm-naming-strategies": "2.0.0",
+    "typeorm-naming-strategies": "4.1.0",
     "winston": "3.7.2",
     "winston-papertrail-transport": "1.0.9"
   },
