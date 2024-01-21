@@ -1,10 +1,11 @@
 import { Test, TestingModule } from "@nestjs/testing";
 import { TypeOrmModule } from "@nestjs/typeorm";
 import { Logger } from "@nestjs/common";
-import { UserService } from "./user.service";
-import { UserEntity } from "./user.entity";
+
 import { TypeOrmConfigService } from "../typeorm/typeorm-config.service";
 import { TypeOrmConfigModule } from "../typeorm/typeorm-config.module";
+import { UserService } from "./user.service";
+import { UserEntity } from "./user.entity";
 
 describe("UserService", () => {
   let service: UserService;

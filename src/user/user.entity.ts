@@ -1,4 +1,5 @@
 import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+
 import { IUser } from "./interfaces";
 
 @Entity({ schema: "test", name: "user" })
